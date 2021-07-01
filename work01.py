@@ -24,4 +24,4 @@ def get_activation_code(length, num):
 
 
 Code_List = get_activation_code(CODE_LENGTH, CODE_NUM)
-# print(Code_List)
+print(Code_List)
