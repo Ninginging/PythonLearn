@@ -1,6 +1,6 @@
 import os
 
-INIT_STRING = 'ABCDEFGHIJKLMNOPQISTUVWXYZabcdefghijklmnopqistuvwxyz\'-'
+INIT_STRING = 'ABCDEFGHIJKLMNOPQISTUVWXYZabcdefghijklmnopqrstuvwxyz\'-'
 
 Statistical_File = open('source\\CountWords.txt', 'r', encoding='utf-8')
 Temp_String = Statistical_File.read()
@@ -31,10 +31,12 @@ def get_statistical_dict(word_list):  # 传入排好顺序的列表,传出键为
 
 
 Word_list = get_words_list(Temp_String)
-Word_list.sort()  # 列表排序
-# print(Word_list)
-Word_dict = get_statistical_dict(Word_list)
-print(Word_dict)
+Word_Num = len(Word_list)
+# Word_list.sort()  # 列表排序
+print(Word_list)
+print(Word_Num)
+# Word_dict = get_statistical_dict(Word_list)
+# print(Word_dict)
 
 Statistical_File.close()
 
