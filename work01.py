@@ -13,7 +13,7 @@ def get_activation_code(length, num):
         code = ''
         for __i in range(length):
             __num = random.randint(0, INIT_STRING_LENGTH)
-            code += INIT_STRING[num]  # 字符串拼接实现激活码生成
+            code += INIT_STRING[__num]  # 字符串拼接实现激活码生成
             if (__i + 1) % 5 == 0 and __i + 1 != CODE_LENGTH:
                 code += '-'
         return code
