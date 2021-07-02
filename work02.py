@@ -9,8 +9,7 @@ my_db = pymysql.connect(
     port=3306,
     user='qimu_0527',
     passwd='qimu_0527',
-    db='exercise0002'
-)
+    db='exercise0002')
 
 my_cursor = my_db.cursor()
 my_cursor.execute('DROP TABLE IF EXISTS Ning_activation_code')
@@ -21,7 +20,8 @@ SQL_CreatTable = '''CREATE TABLE Ning_activation_code(NUM INT NOT NULL,
 my_cursor.execute(SQL_CreatTable)
 
 for i in range(len(Code_List)):
-    SQL_INSERT = '''INSERT INTO Ning_activation_code (NUM, Code, Used) VALUES (%s , '%s', 0)''' % (str(i+1),Code_List[i])
+    SQL_INSERT = '''INSERT INTO Ning_activation_code (NUM, Code, Used) VALUES (%s , '%s', 0)''' % (
+        str(i + 1), Code_List[i])
 
     my_cursor.execute(SQL_INSERT)
 
