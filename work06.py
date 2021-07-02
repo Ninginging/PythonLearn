@@ -3,10 +3,10 @@ import work04
 from collections import Counter
 
 Directory = 'source\\DiaryFiles\\'
-Diary_Files_List = os.listdir(Directory)
+Diary_Files_List = os.listdir(Directory)  # 遍历目录下的文件名，返回文件名列表
 
 
-def statistical_words(__dir, files_list):
+def statistical_words(__dir, files_list):   # 统计目录下每个文件中出现次数最多的单词
     for i in range(len(files_list)):
         temp_file = open(__dir + files_list[i])
         temp_string = temp_file.read()

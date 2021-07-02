@@ -3,10 +3,10 @@ import os
 INIT_STRING = 'ABCDEFGHIJKLMNOPQISTUVWXYZabcdefghijklmnopqrstuvwxyz\'-'
 
 Statistical_File = open('source\\CountWords.txt', 'r', encoding='utf-8')
-Temp_String = Statistical_File.read()
+Temp_String = Statistical_File.read()   # 以字符串形式读取文本文件
 
 
-def get_words_list(word_str):
+def get_words_list(word_str):   # 输入一个字符串，返回字符串里单词列表
     temp_word = ''
     string_index = 0
     word_list = []

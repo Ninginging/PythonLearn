@@ -12,7 +12,7 @@ my_db = pymysql.connect(
     db='exercise0002')
 
 my_cursor = my_db.cursor()
-my_cursor.execute('DROP TABLE IF EXISTS Ning_activation_code')
+my_cursor.execute('DROP TABLE IF EXISTS Ning_activation_code')  # 如果表已经存在则删除旧表
 
 SQL_CreatTable = '''CREATE TABLE Ning_activation_code(NUM INT NOT NULL, 
                         Code CHAR(30), 
@@ -21,7 +21,7 @@ my_cursor.execute(SQL_CreatTable)
 
 for i in range(len(Code_List)):
     SQL_INSERT = '''INSERT INTO Ning_activation_code (NUM, Code, Used) VALUES (%s , '%s', 0)''' % (
-        str(i + 1), Code_List[i])
+        str(i + 1), Code_List[i])   # 向表中插入值，注意字符串形式要加''
 
     my_cursor.execute(SQL_INSERT)
 
