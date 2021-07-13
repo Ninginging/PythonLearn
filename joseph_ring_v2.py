@@ -3,7 +3,7 @@ import random
 INIT_STRING = 'ABCDEFGHIJKLMNOPQISTUVWXYZabcdefghijklmnopqrstuvwxyz'
 INIT_NUM = '01234567890'
 INIT_GENDER = ('男', '女')
-GROUP_SIZE =11
+GROUP_SIZE = 7
 
 
 class Player:
@@ -11,6 +11,7 @@ class Player:
         self.name = self.get_name()
         self.std_id = self.get_id()
         self.gender = self.get_gender()
+        self.birthdate = self.get_birth_date()
 
     def get_name(self, size=5):
         name = ''
@@ -18,8 +19,8 @@ class Player:
             name += random.choice(INIT_STRING)
         return name
 
-    def get_id(self, size=12):
-        std_id = ''
+    def get_id(self, size=4):
+        std_id = '20202206'
         for i in range(size):
             std_id += random.choice(INIT_NUM)
         return std_id
@@ -27,6 +28,15 @@ class Player:
     def get_gender(self):
         gender = random.choice(INIT_GENDER)
         return gender
+
+    def get_birth_date(self):
+        birth = '199'
+        birth += random.choice('6789')
+        birth += '/'
+        birth += str(random.randint(1, 12))
+        birth += '/'
+        birth += str(random.randint(1, 30))
+        return birth
 
 
 group = []
@@ -68,7 +78,7 @@ class Joseph(list):
         return results
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":      # Test
     group_name, group_name_new = [], []
     for i in range(GROUP_SIZE):
         group_name.append(group[i].name)

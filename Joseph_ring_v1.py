@@ -23,22 +23,22 @@ group = [zzc, sky, csb, yyj, lq, wyk, hht, wf, cn]
 def joseph_traversal(container, step, start_ele):
     assert type(step) == int, '输入错误'
     start_index = container.index(start_ele)
-    index = list(range(len(container)))  # 创建输入容器的索引列表，只针对索引进行操作
-    used_index = []  # 暂存已经遍历过的索引值
+    index_list = list(range(len(container)))  # 创建输入容器的索引列表，只针对索引进行操作
+    used_index_list = []  # 暂存已经遍历过的索引值
     results = []  # 返回的遍历之后的结果
-    cnt = 0
+    pos = 0     # 改为位置 pos
 
-    while len(used_index) != len(index):
-        if start_index > len(index) - 1:
+    while len(used_index_list) != len(index_list):
+        if start_index > len(index_list) - 1:
             start_index = 0
-        if not (index[start_index] in used_index):
-            cnt += 1
+        if not (index_list[start_index] in used_index_list):
+            pos += 1
             # print('当前i是', start_index)
-            if cnt == step:
-                used_index.append(start_index)  # 更新已遍历列表
+            if pos == step:
+                used_index_list.append(start_index)  # 更新已遍历列表
                 results.append(container[start_index])  # 将容器的对应值存入结果列表
                 # print(used_index)
-                cnt = 0
+                pos = 0
         start_index += 1
 
     return results
